@@ -1,7 +1,8 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/coinbase/onchainkit/main/site/docs/public/logo/v0-27.png">
-    <img alt="OnchainKit logo vibes" src="https://raw.githubusercontent.com/coinbase/onchainkit/main/site/docs/public/logo/v0-27.png" width="auto">
+    <img width="1482" alt="Screenshot 2024-10-07 at 7 02 12 PM" src="https://github.com/user-attachments/assets/75109287-3e35-4f97-9770-46e16461eb1b">
+
   </picture>
 </p>
 
