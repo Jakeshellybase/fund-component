@@ -10,7 +10,7 @@ This is a demo application showcasing the use of OnchainKit's Fund component, bu
 
 Explore the demo live at [https://fund-component.vercel.app](https://fund-component.vercel.app).
 
-Have fun! ⛵️
+Enjoy building.
 
 <br />
 
