@@ -39,13 +39,16 @@ export default function TransactionWrapper({ address }: { address: Address }) {
     <div className="flex w-[450px]">
       <Transaction
         contracts={contracts}
-        className="w-[450px]"
+        className="w-[200px]"
         chainId={BASE_SEPOLIA_CHAIN_ID}
         onError={handleError}
         onSuccess={handleSuccess}
       >
-        <TransactionButton className="mt-0 mr-auto ml-auto w-[450px] max-w-full text-[white]" />
-        <TransactionStatus>
+        <TransactionButton 
+        className='mt-4 mr-auto ml-auto w-[280px] max-w-full bg-purple-500 font-sans text-[white] hover:bg-purple-600' 
+        text={"Become an early adopter"}
+        />
+        <TransactionStatus className='flex flex-col items-center justify-center'>
           <TransactionStatusLabel />
           <TransactionStatusAction />
         </TransactionStatus>
