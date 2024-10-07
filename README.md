@@ -5,11 +5,11 @@
   </picture>
 </p>
 
-# Onchain App Template
+# Onchain Fund Component Demo
 
-An Onchain App Template build with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
+This is a demo application showcasing the use of OnchainKit's Fund component, built with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
 
-Play with it live on https://onchain-app-template.vercel.app
+Explore the demo live at [https://fund-component.vercel.app](https://fund-component.vercel.app).
 
 Have fun! ⛵️
 
@@ -30,6 +30,88 @@ NEXT_PUBLIC_CDP_API_KEY="GET_FROM_COINBASE_DEVELOPER_PLATFORM"
 # See https://cloud.walletconnect.com
 NEXT_PUBLIC_WC_PROJECT_ID="GET_FROM_WALLET_CONNECT"
 ```
+<br />
+
+## Using the FundButton Component
+
+The `<FundButton />` component provides a way for users to fund their wallet without leaving your app. It automatically detects the user's wallet type (EOA vs Smart Wallet) and directs them to the appropriate funding URL.
+
+- **Coinbase Smart Wallet**: Provides access to the Coinbase Smart Wallet Fund flow, allowing users to buy and receive crypto or use their Coinbase balances onchain with Magic Spend.
+- **EOA Wallets**: Provides access to Coinbase Onramp, enabling users to buy crypto using a fiat payment method or transfer existing crypto from their Coinbase account.
+
+### Walkthrough
+
+1. **Get your Project ID**: Obtain your Project ID from the Coinbase Developer Platform Dashboard.
+2. **Add your Project ID to your `.env` file**:
+   ```sh
+   NEXT_PUBLIC_ONCHAINKIT_API_KEY=YOUR_PUBLIC_API_KEY
+   NEXT_PUBLIC_CDP_PROJECT_ID=YOUR_CDP_PROJECT_ID
+   ```
+3. **Add Project ID to OnchainKitProvider**:
+   ```jsx
+   <OnchainKitProvider
+     apiKey={process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY} 
+     projectId={process.env.NEXT_PUBLIC_CDP_PROJECT_ID}
+     chain={base}
+   >
+     {props.children}
+   </OnchainKitProvider>
+   ```
+4. **Drop in the `<FundButton />` component**:
+   ```jsx
+   import { FundButton } from '@coinbase/onchainkit/fund';
+   
+   <FundButton />
+   ```
+
+### Troubleshooting
+
+If you encounter a "something went wrong" error when navigating to pay.coinbase.com, ensure "enforce secure initialization" is disabled on the Onramp config page in the Coinbase Developer Platform Dashboard.
+
+### Customizing the Funding Experience
+
+You can customize the Coinbase Onramp experience by providing your own Onramp URL to the `<FundButton />` component. Use the `getOnrampBuyUrl` utility to generate a tailored Coinbase Onramp URL.
+
+```jsx
+import { FundButton, getOnrampBuyUrl } from '@coinbase/onchainkit/fund';
+import { useAccount } from 'wagmi';
+
+const projectId = 'YOUR_CDP_PROJECT_ID';
+const { address } = useAccount();
+
+const onrampBuyUrl = getOnrampBuyUrl({
+  projectId,
+  addresses: { address: ['base'] },
+  assets: ['USDC'],
+  presetFiatAmount: 20,
+  fiatCurrency: 'USD'
+});
+
+<FundButton fundingUrl={onrampBuyUrl} />
+```
+
+You can choose to have the funding URL open in a popup or a new tab using the `openIn` prop.
+
+```jsx
+<FundButton openIn={"tab"} />
+```
+
+### Customizing the Fund Button
+
+Override the text on the fund button using the `text` prop, and hide the icon with the `hideIcon` prop.
+
+```jsx
+<FundButton text="Onramp" hideIcon={true} />
+```
+
+Hide the text with the `hideText` prop.
+
+```jsx
+<FundButton hideText={true} />
+```
+
+See `FundButtonReact` for the full list of customization options.
+
 <br />
 
 ## Locally run
