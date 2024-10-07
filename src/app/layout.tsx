@@ -19,10 +19,10 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Onchain App Template',
+  title: 'Fund Component',
   description: 'Built with OnchainKit',
   openGraph: {
-    title: 'Onchain App Template',
+    title: 'Fund Component',
     description: 'Built with OnchainKit',
     images: [`${NEXT_PUBLIC_URL}/vibes/vibes-19.png`],
   },
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex items-center justify-center">
-        <OnchainProviders>{children}</OnchainProviders>
+          <OnchainProviders>{children}</OnchainProviders>
       </body>
     </html>
   );
