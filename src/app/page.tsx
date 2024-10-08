@@ -27,7 +27,7 @@ export default function Page() {
           <div className="flex items-center gap-3">
             <SignupButton />
             {!address && <LoginButton />}
-            {address && <FundComponent />}
+            <FundComponent />
           </div>
         </div>
       </section>

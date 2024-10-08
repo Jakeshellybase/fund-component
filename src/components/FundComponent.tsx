@@ -4,7 +4,7 @@ export default function FundComponent() {
   
   return <FundButton 
     className='bg-slate-300 font-sans text-black text-md hover:bg-purple-500' 
-    // text={"Buy Crypto"}
+    text={"Fund"}
     hideText={true}
     hideIcon={false}
     />;
