@@ -4,7 +4,7 @@
   </picture>
 </p>
 
-# Onchain Fund Component Demo
+# OnchainKit Fund Component Demo
 
 This is a demo application showcasing the use of OnchainKit's Fund component, built with [OnchainKit](https://onchainkit.xyz), and ready to be deployed to Vercel.
 
@@ -18,7 +18,7 @@ Enjoy building.
 
 To ensure all components work seamlessly, set the following environment variables in your `.env` file using `.env.local.example` as a reference.
 
-You can find the API key on the [Coinbase Developer Portal's OnchainKit page](https://portal.cdp.coinbase.com/products/onchainkit). If you don't have an account, you will need to create one. 
+You can find the `API key` and `projectID` on the [Coinbase Developer Portal's OnchainKit page](https://portal.cdp.coinbase.com/products/onchainkit). If you don't have an account, you will need to create one. 
 
 ```sh
 # See https://portal.cdp.coinbase.com/products/onchainkit
