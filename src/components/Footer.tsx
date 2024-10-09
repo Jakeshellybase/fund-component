@@ -20,9 +20,9 @@ const docLinks = [
 
 export default function Footer() {
   return (
-    <section className='mt-auto mb-2 flex w-full flex-col-reverse justify-between gap-2 font-sans md:mt-8 md:mb-6 md:flex-row'>
-      <aside className="flex items-center pt-2 md:pt-0">
-        <h3 className="mr-2 mb-2 text-m md:mb-0">
+    <section className='mt-auto mb-1 flex w-full flex-col-reverse justify-between gap-1 font-sans md:mt-8 md:mb-6 md:flex-row'>
+      <aside className="flex items-center justify-center pt-1 md:justify-start md:pt-0">
+        <h3 className="mr-2 mb-1 text-m md:mb-0">
           Built with love by{' '}
           <a
             href={ONCHAINKIT_LINK}
@@ -34,9 +34,8 @@ export default function Footer() {
             OnchainKit
           </a>
         </h3>
-
       </aside>
-      <ul className="mt-4 flex max-w-full flex-col flex-wrap justify-center gap-3 md:mt-0 md:flex-row md:justify-start md:gap-6">
+      <ul className='mt-2 hidden max-w-full flex-col flex-wrap justify-center gap-2 md:mt-0 md:flex md:flex-row md:justify-start md:gap-6'>
         {docLinks.map(({ href, title }) => (
           <li className="flex" key={href}>
             <motion.a

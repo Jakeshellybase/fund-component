@@ -27,7 +27,7 @@ export default function WalletWrapper({
 }: WalletWrapperParams) {
   return (
     <>
-      <Wallet>
+      <Wallet className='z-50'>
         <ConnectWallet
           withWalletAggregator={withWalletAggregator}
           text={text}
