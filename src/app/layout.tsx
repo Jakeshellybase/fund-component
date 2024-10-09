@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 const OnchainProviders = dynamic(
   () => import('src/components/OnchainProviders'),
   {
-    ssr: false,
+    ssr: false, // Ensure this is set correctly based on your needs
   },
 );
 

@@ -3,9 +3,9 @@ import { FundButton } from '@coinbase/onchainkit/fund';
 export default function FundComponent() {
   
   return <FundButton 
-    className='bg-slate-300 font-sans text-black text-md hover:bg-purple-500' 
+    className='bg-slate-200 font-sans text-black text-md text-semibold hover:bg-purple-500 hover:text-white' 
     text={"Fund"}
-    hideText={true}
-    hideIcon={false}
+    hideText={false}
+    hideIcon={true}
     />;
 }
